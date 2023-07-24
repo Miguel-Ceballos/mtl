@@ -64,8 +64,8 @@
         </div>
     </aside>
 
-    <div class="p-4 sm:ml-64">
-        <div {{ $attributes->merge(['class' => 'p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700']) }}>
+    <div class="p-2 sm:ml-64 h-screen">
+        <div {{ $attributes->merge(['class' => 'border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full']) }}>
             {{ $slot }}
         </div>
     </div>
