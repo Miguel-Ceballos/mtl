@@ -32,4 +32,12 @@ class PageController extends Controller
         return redirect('dashboard');
     }
 
+    public function destroy(Page $page)
+    {
+		$this->authorize('delete', $page);
+        $page->delete();
+
+        return redirect()->route('dashboard');
+    }
+
 }

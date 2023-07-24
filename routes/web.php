@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/pages/create', [PageController::class, 'create'])->name('page.create');
     Route::post('/pages/create/store', [PageController::class, 'store'])->name('page.store');
+    Route::delete('/pages/{page}', [PageController::class, 'destroy'])->name('page.destroy');
 
     Route::get('/tasks/{page:slug}', [TaskController::class, 'index'])->name('tasks');
     Route::get('/tasks/{page:slug}/create', [TaskController::class, 'create'])->name('tasks.create');
