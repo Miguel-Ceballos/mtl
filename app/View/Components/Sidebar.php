@@ -22,8 +22,10 @@ class Sidebar extends Component
      */
     public function render(): View|Closure|string
     {
+//        ddd(auth()->user()->pages());
+
         return view('components.sidebar', [
-            'pages' => Page::all()
+            'pages' => auth()->user()->pages
         ]);
     }
 }
