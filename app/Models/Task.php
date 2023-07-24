@@ -26,4 +26,9 @@ class Task extends Model
         return $this->belongsTo(Page::class);
     }
 
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
 }
