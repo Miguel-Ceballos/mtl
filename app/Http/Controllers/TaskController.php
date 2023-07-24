@@ -13,7 +13,7 @@ class TaskController extends Controller
     {
         return view('admin.tasks.index', [
             'page' => $page,
-            'tasks' => Task::all()
+            'tasks' => $page->tasks
         ]);
     }
 

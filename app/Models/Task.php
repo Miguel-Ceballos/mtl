@@ -16,4 +16,14 @@ class Task extends Model
         'user_id'
     ];
 
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
+    }
+
 }
