@@ -29,7 +29,7 @@ class PageController extends Controller
             'slug' => Str::slug($request->name)
         ]);
 
-        return redirect('dashboard');
+        return redirect()->route('tasks', Str::slug($request->name));
     }
 
     public function destroy(Page $page)
