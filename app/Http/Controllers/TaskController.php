@@ -57,4 +57,10 @@ class TaskController extends Controller
 
     }
 
+    public function destroy(Page $page, Task $task)
+    {
+		$task->delete();
+        return redirect()->route('tasks', $page->slug);
+    }
+
 }
