@@ -29,7 +29,7 @@ class TaskController extends Controller
     public function store(Request $request, Page $page)
     {
 //        ddd($request);
-		$this->validate($request, [
+        $this->validate($request, [
             'description' => 'required|min:3|max:100',
             'status_id' => 'required|numeric'
         ]);
@@ -40,6 +40,18 @@ class TaskController extends Controller
             'status_id' => $request->status_id,
             'page_id' => $page->id
         ]);
+
+        return redirect()->route('tasks', $page->slug);
+    }
+
+    public function update(Request $request, Page $page, Task $task)
+    {
+        $attributes = $this->validate($request, [
+            'description' => 'required|min:3|max:100',
+            'status_id' => 'required|numeric'
+        ]);
+
+        $task->update($attributes);
 
         return redirect()->route('tasks', $page->slug);
 
