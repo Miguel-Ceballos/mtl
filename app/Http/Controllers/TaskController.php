@@ -41,7 +41,7 @@ class TaskController extends Controller
             'page_id' => $page->id
         ]);
 
-        return redirect()->route('tasks', $page->slug);
+        return redirect()->route('tasks', $page->slug)->with('success', 'The task has been created');
     }
 
     public function update(Request $request, Page $page, Task $task)
@@ -53,14 +53,14 @@ class TaskController extends Controller
 
         $task->update($attributes);
 
-        return redirect()->route('tasks', $page->slug);
+        return redirect()->route('tasks', $page->slug)->with('success', 'The task has been updated');
 
     }
 
     public function destroy(Page $page, Task $task)
     {
 		$task->delete();
-        return redirect()->route('tasks', $page->slug);
+        return redirect()->route('tasks', $page->slug)->with('success', 'The task has been deleted');
     }
 
 }
