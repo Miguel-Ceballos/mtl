@@ -2,6 +2,9 @@
 
 @php
 switch ($align) {
+    case 'bottom':
+        $alignmentClasses = 'origin-bottom top-0 left-8';
+        break;
     case 'left':
         $alignmentClasses = 'origin-top-left left-0';
         break;

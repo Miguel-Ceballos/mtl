@@ -2,10 +2,102 @@
     <div class="flex flex-col w-full md:w-full md:h-full xl:w-full xl:h-full rounded-md">
         <div class="flex flex-col w-full md:w-full xl:w-full items-center justify-center">
             <div class="container xl:max-w-6xl mx-auto px-4">
-                <h1 class="text-white font-semibold text-3xl mb-16 text-center uppercase">{{ $page->name }} tasks</h1>
+                <div class="flex flex-row items-center mb-16">
+                    <h1 class="text-white font-semibold text-3xl mr-6 uppercase">{{ $page->name }}</h1>
+
+
+                    <!-- Settings Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-dropdown align="bottom" width="48">
+                            <x-slot name="trigger">
+                                <button
+                                    class="w-7 h-7 flex bg-gray-600 justify-center items-center rounded-full hover:bg-gray-700"
+                                    type="button">
+                                    <svg
+                                        class="transition duration-75 dark:text-gray-100 group-hover:text-gray-900 dark:group-hover:text-white "
+                                        fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        version="1.1" viewBox="0 0 512 512" width="15" height="15">
+                                        <g>
+                                            <circle cx="256" cy="53.333" r="53.333"/>
+                                            <circle cx="256" cy="256" r="53.333"/>
+                                            <circle cx="256" cy="458.667" r="53.333"/>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <button data-modal-target="edit-page-modal" data-modal-toggle="edit-page-modal"
+                                        class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out"
+                                        type="button">
+                                    Edit
+                                </button>
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('page.destroy', $page) }}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <x-dropdown-link :href="route('page.destroy', $page)"
+                                                     onclick="event.preventDefault();
+                                                                                this.closest('form').submit();">
+                                        {{ __('Delete') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+
+                    <div>
+                        <!-- Main modal -->
+                        <div id="edit-page-modal" tabindex="-1" aria-hidden="true"
+                             class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative w-full max-w-md max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <button type="button"
+                                            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                            data-modal-hide="edit-page-modal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                             fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                  stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                    <div class="px-6 py-6 lg:px-8">
+                                        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Edit
+                                            Page</h3>
+                                        <form method="POST" action="{{ route('page.store') }}" class="mt-10" novalidate>
+                                            @csrf
+                                            <div class="mt-4">
+                                                <x-input-label for="description" :value="__('Name')" class=""/>
+                                                <input type="text"
+                                                       name="name"
+                                                       value="{{old('name', $page->name)}}"
+                                                       id="name"
+                                                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                                       required
+                                                       autocomplete="name">
+                                                <x-input-error :messages="$errors->get('name')" class="mt-2"/>
+                                            </div>
+                                            <button type="submit"
+                                                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">
+                                                Create page
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 <p class="text-white mb-2">Your progress:</p>
                 <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                    <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 45%"> 45%</div>
+                    <div
+                        class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+                        style="width: 45%"> 45%
+                    </div>
                 </div>
 
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -13,7 +105,9 @@
                         <div>
 
                             <!-- Modal toggle -->
-                            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="my-10 inline-flex items-center px-4 py-2 bg-emerald-700 dark:bg-emerald-500 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-emerald-600 focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150" type="button">
+                            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                                    class="my-10 inline-flex items-center px-4 py-2 bg-emerald-700 dark:bg-emerald-500 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-emerald-600 focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
+                                    type="button">
                                 <svg
                                     class="flex-shrink-0 w-4 h-4 text-gray-800 mr-2 transition duration-75 dark:text-gray-800 group-hover:text-gray-900 dark:group-hover:text-white"
                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -26,22 +120,31 @@
                             </button>
 
                             <!-- Main modal -->
-                            <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+                                 class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                 <div class="relative w-full max-w-md max-h-full">
                                     <!-- Modal content -->
                                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                        <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
-                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        <button type="button"
+                                                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                data-modal-hide="authentication-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                      stroke-linejoin="round" stroke-width="2"
+                                                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                             </svg>
                                             <span class="sr-only">Close modal</span>
                                         </button>
                                         <div class="px-6 py-6 lg:px-8">
-                                            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">New task</h3>
-                                            <form method="POST" action="{{ route('tasks.store', $page->slug) }}" class="mt-10" novalidate>
+                                            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">New
+                                                task</h3>
+                                            <form method="POST" action="{{ route('tasks.store', $page->slug) }}"
+                                                  class="mt-10" novalidate>
                                                 @csrf
                                                 <div class="mt-4">
-                                                    <x-input-label for="description" :value="__('Description')" class=""/>
+                                                    <x-input-label for="description" :value="__('Description')"
+                                                                   class=""/>
                                                     <input type="text"
                                                            name="description"
                                                            value="{{old('description')}}"
@@ -49,21 +152,26 @@
                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                                            required
                                                            autocomplete="description">
-                                                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                                                    <x-input-error :messages="$errors->get('description')"
+                                                                   class="mt-2"/>
                                                 </div>
-
 
 
                                                 <div class="mt-4">
                                                     <x-input-label for="status_id" :value="__('Status')" class=""/>
 
-                                                    <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                    <select name="status_id" id="status_id"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                                         @foreach($statuses as $status)
-                                                            <option value="{{ $status->id }}">{{ $status->status }}</option>
+                                                            <option
+                                                                value="{{ $status->id }}">{{ $status->status }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">Create task</button>
+                                                <button type="submit"
+                                                        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">
+                                                    Create task
+                                                </button>
                                             </form>
                                         </div>
                                     </div>
@@ -152,28 +260,42 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <!-- Modal toggle -->
-                                    <button data-modal-target="edit-modal{{ $task->id }}" data-modal-toggle="edit-modal{{ $task->id }}" class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline" type="button">
+                                    <button data-modal-target="edit-modal{{ $task->id }}"
+                                            data-modal-toggle="edit-modal{{ $task->id }}"
+                                            class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+                                            type="button">
                                         Edit
                                     </button>
 
                                     <!-- Main modal -->
-                                    <div id="edit-modal{{ $task->id }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    <div id="edit-modal{{ $task->id }}" tabindex="-1" aria-hidden="true"
+                                         class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                         <div class="relative w-full max-w-md max-h-full">
                                             <!-- Modal content -->
                                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="edit-modal{{ $task->id }}">
-                                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                <button type="button"
+                                                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                        data-modal-hide="edit-modal{{ $task->id }}">
+                                                    <svg class="w-3 h-3" aria-hidden="true"
+                                                         xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                         viewBox="0 0 14 14">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                                     </svg>
                                                     <span class="sr-only">Close modal</span>
                                                 </button>
                                                 <div class="px-6 py-6 lg:px-8">
-                                                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Edit task</h3>
-                                                    <form method="POST" action="{{ route('task.update', [$page->slug, $task]) }}" class="mt-10" novalidate>
+                                                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+                                                        Edit task</h3>
+                                                    <form method="POST"
+                                                          action="{{ route('task.update', [$page->slug, $task]) }}"
+                                                          class="mt-10" novalidate>
                                                         @method('PATCH')
                                                         @csrf
                                                         <div class="mt-4">
-                                                            <x-input-label for="description" :value="__('Description')" class=""/>
+                                                            <x-input-label for="description" :value="__('Description')"
+                                                                           class=""/>
                                                             <input type="text"
                                                                    name="description"
                                                                    value="{{$task->description}}"
@@ -181,21 +303,27 @@
                                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                                                    required
                                                                    autocomplete="description">
-                                                            <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                                                            <x-input-error :messages="$errors->get('description')"
+                                                                           class="mt-2"/>
                                                         </div>
-
 
 
                                                         <div class="mt-4">
-                                                            <x-input-label for="status_id" :value="__('Status')" class=""/>
+                                                            <x-input-label for="status_id" :value="__('Status')"
+                                                                           class=""/>
 
-                                                            <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                            <select name="status_id" id="status_id"
+                                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                                                 @foreach($statuses as $status)
-                                                                    <option value="{{ $status->id }}" @if($status->id === $task->status_id) selected @endif>{{ $status->status }}</option>
+                                                                    <option value="{{ $status->id }}"
+                                                                            @if($status->id === $task->status_id) selected @endif>{{ $status->status }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
-                                                        <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">Edit task</button>
+                                                        <button type="submit"
+                                                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">
+                                                            Edit task
+                                                        </button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -203,10 +331,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <form method="POST" action="{{ route('tasks.delete', [$page->slug, $task]) }}" novalidate>
+                                    <form method="POST" action="{{ route('tasks.delete', [$page->slug, $task]) }}"
+                                          novalidate>
                                         @method('DELETE')
                                         @csrf
-                                        <button class="font-medium text-red-600 dark:text-red-500 hover:underline" type="submit">
+                                        <button class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                                                type="submit">
                                             Delete
                                         </button>
                                     </form>
