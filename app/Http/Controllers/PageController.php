@@ -16,13 +16,21 @@ class PageController extends Controller
 
     public function store(Request $request)
     {
-//        ddd(\request()->all());
-//        ddd($request);
+
+        $exist = \DB::table('pages')
+            ->select('id')
+            ->where('user_id', '=', auth()->user()->id)
+            ->where('slug', '=', Str::slug($request->name))
+            ->get()
+        ;
+
+        if(count($exist) > 0){
+                return back()->with('error', 'This page already exist');
+        }
+
         $this->validate($request, [
             'name' => 'required|min:3|max:30'
         ]);
-
-//        $attributes['slug'] = \Illuminate\Support\Str::slug($request->name);
 
         Page::create([
             'user_id' => auth()->user()->id,
