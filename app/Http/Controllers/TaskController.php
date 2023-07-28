@@ -6,14 +6,17 @@ use App\Models\Page;
 use App\Models\Status;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class TaskController extends Controller
 {
     public function index(Page $page)
     {
+//        $date = str_replace('/', '-', \request()->input('date'));
+
         return view('admin.tasks.index', [
             'page' => $page,
-            'tasks' => $page->tasks,
+            'tasks' => Task::latest()->filter(\request(['status_id']))->get(),
             'statuses' => Status::all()
         ]);
     }

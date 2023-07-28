@@ -31,4 +31,12 @@ class Task extends Model
         return $this->belongsTo(Status::class);
     }
 
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['status_id'] ?? false, fn($query, $status) =>
+        $query->where(fn($query) =>
+        $query->where('status_id', '=', $status))
+        );
+    }
+
 }

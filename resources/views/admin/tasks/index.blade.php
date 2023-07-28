@@ -199,36 +199,83 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center">
-                            <div class="relative mr-6">
-                                <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio"
-                                        class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                                        type="button">
-                                    <svg class="w-3 h-3 text-gray-500 dark:text-gray-400 mr-2.5" aria-hidden="true"
-                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                        <path
-                                            d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z"/>
-                                    </svg>
-                                    Last 30 days
-                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                              stroke-width="2" d="m1 1 4 4 4-4"/>
-                                    </svg>
-                                </button>
+                            {{--                            <div class="relative mr-6">--}}
+                            {{--                                <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio"--}}
+                            {{--                                        class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"--}}
+                            {{--                                        type="button">--}}
+                            {{--                                    <svg class="w-3 h-3 text-gray-500 dark:text-gray-400 mr-2.5" aria-hidden="true"--}}
+                            {{--                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">--}}
+                            {{--                                        <path--}}
+                            {{--                                            d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z"/>--}}
+                            {{--                                    </svg>--}}
+                            {{--                                    Last 30 days--}}
+                            {{--                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"--}}
+                            {{--                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">--}}
+                            {{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
+                            {{--                                              stroke-width="2" d="m1 1 4 4 4-4"/>--}}
+                            {{--                                    </svg>--}}
+                            {{--                                </button>--}}
+                            {{--                            </div>--}}
+
+
+                            <div class="mr-4">
+
+{{--                                <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">--}}
+{{--                                    <option>all</option>--}}
+{{--                                    @foreach($statuses as $status)--}}
+{{--                                        <option value="{{ $status->id }}">{{ $status->status }}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
                             </div>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                              clip-rule="evenodd"></path>
-                                    </svg>
+
+
+                            <form action="" method="GET">
+                                <div class="flex justify-center items-center">
+{{--                                    <div class="relative max-w-sm">--}}
+{{--                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">--}}
+{{--                                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"--}}
+{{--                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">--}}
+{{--                                                <path--}}
+{{--                                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>--}}
+{{--                                            </svg>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div><input datepicker datepicker-autohide type="text"--}}
+{{--                                                id="date"--}}
+{{--                                                name="date"--}}
+{{--                                                value="{{ request('date') }}"--}}
+{{--                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"--}}
+{{--                                                placeholder="Select date"--}}
+{{--                                                data-date-format="YYYY MM DD"--}}
+{{--                                        ></div>--}}
+{{--                                    <div>--}}
+                                    <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option>all</option>
+                                        @foreach($statuses as $status)
+                                            <option value="{{ $status->id }}">{{ $status->status }}</option>
+                                        @endforeach
+                                    </select>
+                                        <x-primary-button class="ml-4">
+                                            {{ __('Search') }}
+                                        </x-primary-button>
+                                    </div>
                                 </div>
-                                <input type="text" id="table-search"
-                                       class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="Search for items">
-                            </div>
+                            </form>
+
+
+                            {{--                            <div class="relative ml-4">--}}
+                            {{--                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">--}}
+                            {{--                                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true"--}}
+                            {{--                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">--}}
+                            {{--                                        <path fill-rule="evenodd"--}}
+                            {{--                                              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"--}}
+                            {{--                                              clip-rule="evenodd"></path>--}}
+                            {{--                                    </svg>--}}
+                            {{--                                </div>--}}
+                            {{--                                <input type="text" id="table-search"--}}
+                            {{--                                       class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"--}}
+                            {{--                                       placeholder="Search for items">--}}
+                            {{--                            </div>--}}
                         </div>
                     </div>
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -356,7 +403,8 @@
                      role="alert">
                     <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                          fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
                     </svg>
                     <span class="sr-only">Info</span>
                     <div>
@@ -371,7 +419,8 @@
                      role="alert">
                     <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                          fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
                     </svg>
                     <span class="sr-only">Info</span>
                     <div>
