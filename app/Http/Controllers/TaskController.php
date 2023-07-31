@@ -31,7 +31,7 @@ class TaskController extends Controller
         return view('admin.tasks.index', [
             'page' => $page,
 //            'tasks' => Task::latest()->filter($arr2)->get(),
-            'tasks' => Task::latest()->filter($arr2)->get(),
+            'tasks' => $page->tasks()->filter($arr2)->get(),
             'statuses' => Status::all(),
             'currentStatus' => Status::firstWhere('id', \request('status_id'))
         ]);
