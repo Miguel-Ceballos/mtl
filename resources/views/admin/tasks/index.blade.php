@@ -217,44 +217,68 @@
                             {{--                                </button>--}}
                             {{--                            </div>--}}
 
+                            <div x-data="{ show: false}" @click.away="show = false" class="mr-4">
 
-                            <div class="mr-4">
+{{--                                <button class="text-gray-300 bg-gray-600 rounded-md p-2 w-40 text-left" @click="show = ! show">Statuses</button>--}}
+                                <button class="text-gray-300 bg-gray-600 rounded-md p-2 w-40 text-left" @click="show = ! show">{{isset($currentStatus) ? ucwords($currentStatus->status) : 'Statuses'}}</button>
 
-{{--                                <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">--}}
-{{--                                    <option>all</option>--}}
-{{--                                    @foreach($statuses as $status)--}}
-{{--                                        <option value="{{ $status->id }}">{{ $status->status }}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
+                                <div x-show="show" class="absolute bg-gray-700 w-40 mt-1 rounded-md overflow-auto max-h-52" style="display: none">
+                                    <a href="{{ route('tasks', $page->slug) }}" class="block leading-7 hover:bg-gray-600 hover:text-white focus:bg-gray-500 px-2">All</a>
+                                    @foreach($statuses as $status)
+{{--                                        <a href="/tasks/{{ $page->slug }}/?status_id={{ $status->id }}"--}}
+                                        <a href="/tasks/{{ $page->slug }}/?status_id={{ $status->id }}&{{ http_build_query(request()->except('status_id')) }}"
+{{--                                           class="block leading-7 hover:bg-gray-600 hover:text-white text-gray-200 focus:bg-gray-500 px-2">--}}
+                                           class="block leading-7 hover:bg-gray-600 hover:text-white text-gray-200 focus:bg-gray-500 px-2 @if(isset($currentStatus) && $currentStatus = ($status->status))) 'bg-blue-600' : '' @endif">
+                                            {{ ucwords($status->status) }}
+                                        </a>
+                                    @endforeach
+                                </div>
                             </div>
 
-
-                            <form action="" method="GET">
+                            <form action="{{ route('tasks', $page->slug) }}" method="GET">
                                 <div class="flex justify-center items-center">
-{{--                                    <div class="relative max-w-sm">--}}
-{{--                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">--}}
-{{--                                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"--}}
-{{--                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">--}}
-{{--                                                <path--}}
-{{--                                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>--}}
-{{--                                            </svg>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div><input datepicker datepicker-autohide type="text"--}}
-{{--                                                id="date"--}}
-{{--                                                name="date"--}}
-{{--                                                value="{{ request('date') }}"--}}
-{{--                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"--}}
-{{--                                                placeholder="Select date"--}}
-{{--                                                data-date-format="YYYY MM DD"--}}
-{{--                                        ></div>--}}
-{{--                                    <div>--}}
-                                    <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <option>all</option>
-                                        @foreach($statuses as $status)
-                                            <option value="{{ $status->id }}">{{ $status->status }}</option>
-                                        @endforeach
-                                    </select>
+
+                                    {{--                                    <div class="mr-4">--}}
+
+                                    {{--                                        <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">--}}
+                                    {{--                                            --}}{{--                                    <option>all</option>--}}
+                                    {{--                                            <a href="{{ route('tasks', $page->slug) }}"><option>all</option></a>--}}
+                                    {{--                                            @foreach($statuses as $status)--}}
+                                    {{--                                                <option value="{{ $status->id }}">{{ $status->status }}</option>--}}
+                                    {{--                                            @endforeach--}}
+                                    {{--                                        </select>--}}
+                                    {{--                                    </div>--}}
+
+                                    @if(request('status_id'))
+                                        <input type="hidden" name="status_id" value="{{ request('status_id') }}">
+                                    @endif
+
+                                    <div class="relative max-w-sm">
+                                        <div
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                 viewBox="0 0 20 20">
+                                                <path
+                                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div><input datepicker datepicker-autohide type="text"
+                                                id="date"
+                                                name="date"
+                                                value="{{ request('date') }}"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Select date"
+                                                data-date-format="YYYY MM DD"
+                                        ></div>
+                                    <div>
+                                        {{--                                    <select name="status_id" id="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">--}}
+                                        {{--                                        <option>all</option>--}}
+                                        {{--                                        @foreach($statuses as $status)--}}
+                                        {{--                                            <option value="{{ $status->id }}">{{ $status->status }}</option>--}}
+                                        {{--                                        @endforeach--}}
+                                        {{--                                    </select>--}}
                                         <x-primary-button class="ml-4">
                                             {{ __('Search') }}
                                         </x-primary-button>

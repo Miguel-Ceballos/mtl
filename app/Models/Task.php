@@ -37,6 +37,11 @@ class Task extends Model
         $query->where(fn($query) =>
         $query->where('status_id', '=', $status))
         );
+
+        $query->when($filters['date'] ?? false, fn($query, $date) =>
+        $query->where(fn($query) =>
+        $query->where('created_at', 'like', '%'.  $date . '%'))
+        );
     }
 
 }

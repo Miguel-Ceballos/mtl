@@ -12,12 +12,28 @@ class TaskController extends Controller
 {
     public function index(Page $page)
     {
-//        $date = str_replace('/', '-', \request()->input('date'));
+        $date = str_replace('/', '-', \request()->input('date'));
+        if ($date != null){
+            $arr = explode('-', $date);
+            $date = $arr[2] . '-' . $arr[0] . '-' . $arr[1];
+            $arr2 = array(
+                'date' => $date,
+                'status_id' => request(['status_id'])
+            );
+        }
+        else {
+            $arr2 = array(
+                'date' => $date,
+                'status_id' => request(['status_id'])
+            );
+        }
 
         return view('admin.tasks.index', [
             'page' => $page,
-            'tasks' => Task::latest()->filter(\request(['status_id']))->get(),
-            'statuses' => Status::all()
+//            'tasks' => Task::latest()->filter($arr2)->get(),
+            'tasks' => Task::latest()->filter($arr2)->get(),
+            'statuses' => Status::all(),
+            'currentStatus' => Status::firstWhere('id', \request('status_id'))
         ]);
     }
 
