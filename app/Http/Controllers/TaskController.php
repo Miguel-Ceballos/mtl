@@ -28,6 +28,8 @@ class TaskController extends Controller
             );
         }
 
+
+
         return view('admin.tasks.index', [
             'page' => $page,
 //            'tasks' => Task::latest()->filter($arr2)->get(),

@@ -23,9 +23,13 @@ class Sidebar extends Component
     public function render(): View|Closure|string
     {
 //        ddd(auth()->user()->pages());
+//        ddd(request()->all());
+
+//        ddd(\request()->route('page')->slug);
 
         return view('components.sidebar', [
-            'pages' => auth()->user()->pages
+            'pages' => auth()->user()->pages,
+            'currentPage' => \request()->route('page')->slug
         ]);
     }
 }
