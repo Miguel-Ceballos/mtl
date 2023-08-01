@@ -49,32 +49,32 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-4 gap-6 items-center mb-4">
+                <div class="grid grid-cols-4 gap-8 items-center">
                     <div class="items-center justify-center bg-emerald-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
-                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20"><path d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm-.091,15.419c-.387.387-.896.58-1.407.58s-1.025-.195-1.416-.585l-2.782-2.696,1.393-1.437,2.793,2.707,5.809-5.701,1.404,1.425-5.793,5.707Z"/></svg>
+                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><path d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm-.091,15.419c-.387.387-.896.58-1.407.58s-1.025-.195-1.416-.585l-2.782-2.696,1.393-1.437,2.793,2.707,5.809-5.701,1.404,1.425-5.793,5.707Z"/></svg>
                             1 tasks done
                         </p>
                         <p class="text-5xl text-white mt-2">10</p>
                     </div>
                     <div class="items-center justify-center bg-yellow-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
-                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20"><path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm4,13h-4c-.552,0-1-.447-1-1V6c0-.553,.448-1,1-1s1,.447,1,1v5h3c.553,0,1,.447,1,1s-.447,1-1,1Z"/></svg>
+                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm4,13h-4c-.552,0-1-.447-1-1V6c0-.553,.448-1,1-1s1,.447,1,1v5h3c.553,0,1,.447,1,1s-.447,1-1,1Z"/></svg>
                             2 tasks in progress
                         </p>
                         <p class="text-5xl text-white mt-2">10</p>
                     </div>
                     <div class="items-center justify-center bg-rose-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
-                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20"><path d="M17,0H7C4.243,0,2,2.243,2,5v14c0,2.757,2.243,5,5,5h10c2.757,0,5-2.243,5-5V5c0-2.757-2.243-5-5-5Zm-7,19c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm7,12h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Z"/></svg>
+                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><path d="M17,0H7C4.243,0,2,2.243,2,5v14c0,2.757,2.243,5,5,5h10c2.757,0,5-2.243,5-5V5c0-2.757-2.243-5-5-5Zm-7,19c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm7,12h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Z"/></svg>
                             3 tasks to do
                         </p>
                         <p class="text-5xl text-white mt-2">10</p>
                     </div>
                     <div class="items-center justify-center bg-violet-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
-                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20"><path d="M17,0H7C4.243,0,2,2.243,2,5v14c0,2.757,2.243,5,5,5h10c2.757,0,5-2.243,5-5V5c0-2.757-2.243-5-5-5Zm-7,19c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm7,12h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Z"/></svg>
-                            3 tasks to do
+                            <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><title>07-Chart</title><path d="M14.414,13l6.745,6.745A11.945,11.945,0,0,0,23.95,13Z"/><path d="M11.293,12.707h0L11,12.414V.05a12,12,0,1,0,8.745,21.109Z"/><path d="M13,11H23.95A11.99,11.99,0,0,0,13,.05Z"/></svg>
+                            full percentage
                         </p>
                         <p class="text-5xl text-white mt-2">100%</p>
                     </div>
@@ -131,7 +131,6 @@
 
                 <div class="flex items-center justify-between">
                     <div>
-
                         <!-- Modal toggle -->
                         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
                                 class="my-4 inline-flex items-center px-4 py-3 bg-emerald-700 dark:bg-violet-600 border border-transparent rounded-md font-semibold text-xs text-white dark:text-white uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-violet-500 focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
@@ -261,7 +260,7 @@
 
                 <!-- LIST -->
 
-                <ul class="w-full mb-8">
+                <ul class="w-full mb-8 mt-4">
                     <li class="py-3 sm:pb-4 bg-gray-700 rounded-md w-full">
                         <div class="flex flex-row px-8">
                             <div class="basis-4/6">
@@ -294,124 +293,138 @@
                 </ul>
 
 
-                <ul class="w-full mb-4">
-                    @foreach($tasks as $task)
-                    <li class="bg-gray-800 w-full rounded-md hover:bg-gray-600 mb-1">
-                            <div class="flex flex-row py-4 px-8">
-                                <div class="basis-4/6">
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">
-                                        {{ $task->description }}
-                                    </p>
-                                </div>
-                                <div class="basis-1/6">
-                                    <p class="flex w-24 h-6 text-sm text-center text-gray-800 font-medium rounded-lg items-center justify-center
+                @if(count($tasks))
+                    <ul class="w-full mb-4">
+                        @foreach($tasks as $task)
+                            <li class="bg-gray-800 w-full rounded-md hover:bg-gray-600 mb-1">
+                                <div class="flex flex-row py-4 px-8">
+                                    <div class="basis-4/6">
+                                        <p class="text-sm font-medium text-gray-900 dark:text-white">
+                                            {{ $task->description }}
+                                        </p>
+                                    </div>
+                                    <div class="basis-1/6">
+                                        <p class="flex w-24 h-6 text-sm text-center text-gray-800 font-medium rounded-lg items-center justify-center
                                                     @switch($task->status_id)
                                                         @case(1)
-                                                        bg-rose-200 text-rose-700 border-2 border-rose-500 opacity-90
+                                                        text-rose-300 border-2 border-rose-500
                                                         @break
 
                                                         @case(2)
-                                                        bg-orange-200 text-orange-700 border-2 border-orange-500 opacity-90
+                                                        text-orange-300 border-2 border-orange-500
                                                         @break
 
                                                         @case(3)
-                                                        bg-green-200 text-green-700 border-2 border-green-500 opacity-90
+                                                        text-green-300 border-2 border-green-500
                                                         @break
 
                                                     @endswitch ">{{ $task->status->status }}</p>
-                                </div>
-                                <div class="basis-1/6">
-                                    <p class="text-sm font-medium text-gray-900 dark:text-gray-400">
-                                        {{ date_format($task->created_at,'d-m-Y') }}
-                                    </p>
-                                </div>
-                                <div class="basis-1/6">
-                                    <!-- Modal toggle -->
-                                    <button data-modal-target="edit-modal{{ $task->id }}"
-                                            data-modal-toggle="edit-modal{{ $task->id }}"
-                                            class="text-sm font-medium text-gray-200 dark:text-gray-400 hover:underline hover:text-indigo-500"
-                                            type="button">
-                                        Edit
-                                    </button>
+                                    </div>
+                                    <div class="basis-1/6">
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-400">
+                                            {{ date_format($task->created_at,'d-m-Y') }}
+                                        </p>
+                                    </div>
+                                    <div class="basis-1/6">
+                                        <!-- Modal toggle -->
+                                        <button data-modal-target="edit-modal{{ $task->id }}"
+                                                data-modal-toggle="edit-modal{{ $task->id }}"
+                                                class="text-sm font-medium text-gray-200 dark:text-gray-400 hover:underline hover:text-indigo-500"
+                                                type="button">
+                                            Edit
+                                        </button>
 
-                                    <!-- Main modal -->
-                                    <div id="edit-modal{{ $task->id }}" tabindex="-1" aria-hidden="true"
-                                         class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                        <div class="relative w-full max-w-md max-h-full">
-                                            <!-- Modal content -->
-                                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                                <button type="button"
-                                                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                                        data-modal-hide="edit-modal{{ $task->id }}">
-                                                    <svg class="w-3 h-3" aria-hidden="true"
-                                                         xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                         viewBox="0 0 14 14">
-                                                        <path stroke="currentColor" stroke-linecap="round"
-                                                              stroke-linejoin="round" stroke-width="2"
-                                                              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                                    </svg>
-                                                    <span class="sr-only">Close modal</span>
-                                                </button>
-                                                <div class="px-6 py-6 lg:px-8">
-                                                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
-                                                        Edit task</h3>
-                                                    <form method="POST"
-                                                          action="{{ route('task.update', [$page->slug, $task]) }}"
-                                                          class="mt-10" novalidate>
-                                                        @method('PATCH')
-                                                        @csrf
-                                                        <div class="mt-4">
-                                                            <x-input-label for="description" :value="__('Description')"
-                                                                           class=""/>
-                                                            <input type="text"
-                                                                   name="description"
-                                                                   value="{{$task->description}}"
-                                                                   id="description"
-                                                                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                                                   required
-                                                                   autocomplete="description">
-                                                            <x-input-error :messages="$errors->get('description')"
-                                                                           class="mt-2"/>
-                                                        </div>
+                                        <!-- Main modal -->
+                                        <div id="edit-modal{{ $task->id }}" tabindex="-1" aria-hidden="true"
+                                             class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                            <div class="relative w-full max-w-md max-h-full">
+                                                <!-- Modal content -->
+                                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                                    <button type="button"
+                                                            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                            data-modal-hide="edit-modal{{ $task->id }}">
+                                                        <svg class="w-3 h-3" aria-hidden="true"
+                                                             xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                             viewBox="0 0 14 14">
+                                                            <path stroke="currentColor" stroke-linecap="round"
+                                                                  stroke-linejoin="round" stroke-width="2"
+                                                                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                        </svg>
+                                                        <span class="sr-only">Close modal</span>
+                                                    </button>
+                                                    <div class="px-6 py-6 lg:px-8">
+                                                        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+                                                            Edit task</h3>
+                                                        <form method="POST"
+                                                              action="{{ route('task.update', [$page->slug, $task]) }}"
+                                                              class="mt-10" novalidate>
+                                                            @method('PATCH')
+                                                            @csrf
+                                                            <div class="mt-4">
+                                                                <x-input-label for="description" :value="__('Description')"
+                                                                               class=""/>
+                                                                <input type="text"
+                                                                       name="description"
+                                                                       value="{{$task->description}}"
+                                                                       id="description"
+                                                                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                                                       required
+                                                                       autocomplete="description">
+                                                                <x-input-error :messages="$errors->get('description')"
+                                                                               class="mt-2"/>
+                                                            </div>
 
 
-                                                        <div class="mt-4">
-                                                            <x-input-label for="status_id" :value="__('Status')"
-                                                                           class=""/>
+                                                            <div class="mt-4">
+                                                                <x-input-label for="status_id" :value="__('Status')"
+                                                                               class=""/>
 
-                                                            <select name="status_id" id="status_id"
-                                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                                                @foreach($statuses as $status)
-                                                                    <option value="{{ $status->id }}"
-                                                                            @if($status->id === $task->status_id) selected @endif>{{ $status->status }}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                        <button type="submit"
-                                                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">
-                                                            Edit task
-                                                        </button>
-                                                    </form>
+                                                                <select name="status_id" id="status_id"
+                                                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                                    @foreach($statuses as $status)
+                                                                        <option value="{{ $status->id }}"
+                                                                                @if($status->id === $task->status_id) selected @endif>{{ $status->status }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                            <button type="submit"
+                                                                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">
+                                                                Edit task
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="basis-1/6">
+                                        <form method="POST" action="{{ route('tasks.delete', [$page->slug, $task]) }}"
+                                              novalidate>
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="text-sm font-medium text-gray-300 dark:text-gray-400 hover:underline hover:text-red-500"
+                                                    type="submit">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="basis-1/6">
-                                    <form method="POST" action="{{ route('tasks.delete', [$page->slug, $task]) }}"
-                                          novalidate>
-                                        @method('DELETE')
-                                        @csrf
-                                        <button class="text-sm font-medium text-gray-300 dark:text-gray-400 hover:underline hover:text-red-500"
-                                                type="submit">
-                                            Delete
-                                        </button>
-                                    </form>
+                            </li>
+                        @endforeach
+                    </ul>
+                @else
+                    <ul class="w-full mb-4">
+                            <li class="bg-gray-800 w-full rounded-md hover:bg-gray-600 mb-1">
+                                <div class="flex flex-row py-4 px-8 items-center justify-center">
+                                    <div class="">
+                                        <p class="text-sm text-center font-medium text-gray-900 dark:text-white">
+                                            There are no tasks
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                    </li>
-                    @endforeach
-                </ul>
+                            </li>
+                    </ul>
+                @endif
             </div>
             @if(session('success'))
                 <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show"

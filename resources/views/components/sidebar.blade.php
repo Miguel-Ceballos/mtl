@@ -109,7 +109,7 @@
         </div>
     </aside>
 
-    <div class="p-2 sm:ml-64 h-screen">
+    <div class="p-2 sm:ml-64 h-full">
         <div {{ $attributes->merge(['class' => 'h-full']) }}>
             <!-- Main modal -->
             <div id="create-page-modal" tabindex="-1" aria-hidden="true"
