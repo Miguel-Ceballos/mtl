@@ -44,4 +44,12 @@ class Task extends Model
         );
     }
 
+    public function scopeCountTasks($query, $filters)
+    {
+        $query->when($filters ?? false, fn($query, $status) =>
+        $query->where(fn($query) =>
+        $query->where('status_id', '=', $status))
+        );
+    }
+
 }

@@ -53,23 +53,23 @@
                     <div class="items-center justify-center bg-emerald-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
                             <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><path d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm-.091,15.419c-.387.387-.896.58-1.407.58s-1.025-.195-1.416-.585l-2.782-2.696,1.393-1.437,2.793,2.707,5.809-5.701,1.404,1.425-5.793,5.707Z"/></svg>
-                            1 tasks done
+                            tasks done
                         </p>
-                        <p class="text-5xl text-white mt-2">10</p>
+                        <p class="text-5xl text-white mt-2">{{ count($tasksDone) }}</p>
                     </div>
                     <div class="items-center justify-center bg-yellow-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
                             <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm4,13h-4c-.552,0-1-.447-1-1V6c0-.553,.448-1,1-1s1,.447,1,1v5h3c.553,0,1,.447,1,1s-.447,1-1,1Z"/></svg>
-                            2 tasks in progress
+                            tasks in progress
                         </p>
-                        <p class="text-5xl text-white mt-2">10</p>
+                        <p class="text-5xl text-white mt-2">{{ count($tasksInProgress) }}</p>
                     </div>
                     <div class="items-center justify-center bg-rose-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">
                             <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><path d="M17,0H7C4.243,0,2,2.243,2,5v14c0,2.757,2.243,5,5,5h10c2.757,0,5-2.243,5-5V5c0-2.757-2.243-5-5-5Zm-7,19c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm0-6c0,.552-.448,1-1,1h-2c-.552,0-1-.448-1-1v-2c0-.552,.448-1,1-1h2c.552,0,1,.448,1,1v2Zm7,12h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Zm0-6h-4c-1.308-.006-1.307-1.994,0-2h4c1.308,.006,1.307,1.994,0,2Z"/></svg>
-                            3 tasks to do
+                            tasks to do
                         </p>
-                        <p class="text-5xl text-white mt-2">10</p>
+                        <p class="text-5xl text-white mt-2">{{ count($tasksToDo) }}</p>
                     </div>
                     <div class="items-center justify-center bg-violet-500 rounded-lg p-4">
                         <p class="flex flex-row text-white font-medium items-center">

@@ -35,7 +35,10 @@ class TaskController extends Controller
 //            'tasks' => Task::latest()->filter($arr2)->get(),
             'tasks' => $page->tasks()->filter($arr2)->get(),
             'statuses' => Status::all(),
-            'currentStatus' => Status::firstWhere('id', \request('status_id'))
+            'currentStatus' => Status::firstWhere('id', \request('status_id')),
+            'tasksToDo' => $page->tasks()->countTasks(1)->get(),
+            'tasksInProgress' => $page->tasks()->countTasks(2)->get(),
+            'tasksDone' => $page->tasks()->countTasks(3)->get(),
         ]);
     }
 
