@@ -76,7 +76,9 @@
                             <svg class="mr-2 text-white" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="18" height="18"><title>07-Chart</title><path d="M14.414,13l6.745,6.745A11.945,11.945,0,0,0,23.95,13Z"/><path d="M11.293,12.707h0L11,12.414V.05a12,12,0,1,0,8.745,21.109Z"/><path d="M13,11H23.95A11.99,11.99,0,0,0,13,.05Z"/></svg>
                             full percentage
                         </p>
-                        <p class="text-5xl text-white mt-2">100%</p>
+                        <p class="text-5xl text-white mt-2">
+                            @if(count($page->tasks) > 0)  {{ round(count($tasksDone) * 100 / count($page->tasks), 1) }}%@else 0%@endif
+                        </p>
                     </div>
                 </div>
 
