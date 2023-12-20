@@ -156,11 +156,11 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 xl:flex xl:items-center xl:justify-between">
-                    <div class="w-full">
+                <div class="grid grid-cols-2 gap-4 xl:flex xl:items-center">
+                    <div class="w-full xl:w-32">
                         <!-- Modal toggle -->
                         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-                                class="inline-flex items-center w-full px-4 py-3 bg-emerald-700 dark:bg-violet-500 rounded-md font-semibold text-xs text-white dark:text-white uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-violet-600 focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
+                                class="inline-flex items-center w-full xl:w-32 px-4 py-3 bg-emerald-700 dark:bg-violet-500 rounded-md font-semibold text-xs text-white dark:text-white uppercase tracking-widest hover:bg-emerald-600 dark:hover:bg-violet-600 focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
                                 type="button">
                             <svg
                                 class="flex-shrink-0 w-3 h-3 text-white mr-2 transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white"
@@ -234,7 +234,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full">
+                    <div class="w-full xl:w-32">
                         <div x-data="{ show: false}" @click.away="show = false" class="xl:mr-4">
                             <button class="text-gray-300 bg-gray-600 rounded-md p-2 w-full xl:w-40 text-left"
                                     @click="show = ! show">{{isset($currentStatus) ? ucwords($currentStatus->status) : 'Statuses'}}

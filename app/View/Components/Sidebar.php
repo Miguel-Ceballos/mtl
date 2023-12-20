@@ -29,7 +29,7 @@ class Sidebar extends Component
 
         return view('components.sidebar', [
             'pages' => auth()->user()->pages,
-            'currentPage' => \request()->route('page')->slug
+//            'currentPage' => \request()->route('page')->slug
         ]);
     }
 }

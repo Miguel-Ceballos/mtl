@@ -37,7 +37,7 @@
                 <li>
                     <!-- Modal toggle -->
                     <button data-modal-target="create-page-modal" data-modal-toggle="create-page-modal"
-                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group w-full"
+                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-emerald-500 group w-full"
                             type="button">
                         <svg
                             class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white mr-3"
@@ -53,7 +53,7 @@
                 @foreach($pages as $page)
                     <li class="flex flex-row">
                         <a href="{{ route('tasks', $page->slug) }}"
-                           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-emerald-700 group w-full @if(isset($currentPage) && $currentPage == $page->slug) bg-emerald-600 : '' @endif">
+                           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-emerald-500 group w-full @if(isset($currentPage) && $currentPage == $page->slug) bg-emerald-600 : '' @endif">
                             <svg
                                 class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
